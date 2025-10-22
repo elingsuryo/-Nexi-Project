@@ -441,7 +441,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
 
     loadBackgroundTexture() {
       new THREE.TextureLoader().load(
-        "https://assets.codepen.io/7558/red-protocol-poster-03-bg.jpg",
+        "bg.png",
         (tex) => {
           this.backgroundTexture = tex;
           this.createBackgroundMesh();
