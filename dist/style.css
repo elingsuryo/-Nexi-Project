@@ -61,7 +61,7 @@ body::before {
     0 0;
   background-size: 300px 300px;
   -webkit-animation: noise-animation 0.3s steps(5) infinite;
-          animation: noise-animation 0.3s steps(5) infinite;
+  animation: noise-animation 0.3s steps(5) infinite;
   opacity: 0.9;
   will-change: transform;
   z-index: 100;
@@ -184,9 +184,15 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("https://assets.codepen.io/7558/red-protocol-poster-03-bg.jpg");
+  background: radial-gradient(
+      circle at center,
+      rgba(255, 215, 0, 0.08) 0%,
+      rgba(0, 0, 0, 0.95) 60%
+    ),
+    #000000;
   background-size: cover;
   background-position: center;
+  overflow: hidden;
   z-index: 0;
   opacity: 0;
   transition: opacity 1s ease-out;
@@ -194,6 +200,18 @@ body::before {
 
 .fallback-bg.active {
   opacity: 1;
+}
+
+.fallback-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 230, 150, 0.06),
+    transparent 70%
+  );
+  pointer-events: none;
 }
 
 .container {
