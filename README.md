@@ -1,6 +1,6 @@
-# [gsap/threejs/inertia] ❍  Audio Visualizer with THREEJS - Challenge #2 / Entry 1
+# [threejs/gsap] ❍ Interactive Glass Lens Effect with Sound FX
 
 A Pen created on CodePen.
 
-Original URL: [https://codepen.io/filipz/pen/yyyRgry](https://codepen.io/filipz/pen/yyyRgry).
+Original URL: [https://codepen.io/filipz/pen/vEOpMvo](https://codepen.io/filipz/pen/vEOpMvo).
 
