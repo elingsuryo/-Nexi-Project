@@ -229,7 +229,7 @@ body::before {
 }
 
 .logo-overlay img {
-  width: 180px; /* ubah sesuai kebutuhan */
+  width: 300px; /* ubah sesuai kebutuhan */
   height: auto;
   opacity: 0.9;
   filter: drop-shadow(0 0 15px rgba(255, 220, 100, 0.6)) brightness(1.1);
