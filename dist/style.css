@@ -216,6 +216,36 @@ body::before {
   transform: translateY(30px);
 }
 
+.logo-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5; /* di atas canvas tapi di bawah teks */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* agar tidak ganggu interaksi */
+}
+
+.logo-overlay img {
+  width: 180px; /* ubah sesuai kebutuhan */
+  height: auto;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 15px rgba(255, 220, 100, 0.6)) brightness(1.1);
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 10px rgba(255, 220, 100, 0.4)) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(255, 220, 100, 0.8)) brightness(1.2);
+  }
+}
+
 .audio-enable {
   position: fixed;
   top: 0;
