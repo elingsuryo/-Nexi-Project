@@ -399,7 +399,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
       );
       this.camera.position.z = 1;
 
-      // this.loadBackgroundTexture();
+      this.loadBackgroundTexture();
       this.setupPostProcessing();
       this.setupPane();
       this.setupNavHoverSounds();
@@ -439,18 +439,18 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
       }
     },
 
-    // loadBackgroundTexture() {
-    // //   new THREE.TextureLoader().load(
-    // //     "https://assets.codepen.io/7558/red-protocol-poster-03-bg.jpg",
-    // //     (tex) => {
-    // //       this.backgroundTexture = tex;
-    // //       this.createBackgroundMesh();
-    // //       this.isTextureLoaded = true;
-    // //     },
-    // //     undefined,
-    // //     () => (this.isTextureLoaded = true)
-    // //   );
-    // // },
+    loadBackgroundTexture() {
+      new THREE.TextureLoader().load(
+        "https://assets.codepen.io/7558/red-protocol-poster-03-bg.jpg",
+        (tex) => {
+          this.backgroundTexture = tex;
+          this.createBackgroundMesh();
+          this.isTextureLoaded = true;
+        },
+        undefined,
+        () => (this.isTextureLoaded = true)
+      );
+    },
 
     createBackgroundMesh() {
       if (this.backgroundMesh) this.backgroundScene.remove(this.backgroundMesh);
