@@ -48,7 +48,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
         followMouse: true,
         animationSpeed: 1,
         overallIntensity: 1,
-        preset: "Classic Glass"
+        preset: "Classic Glass",
       },
       presets: {
         Minimal: {
@@ -64,7 +64,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
           waveDistortion: 0.02,
           waveSpeed: 0.8,
           lensBlur: 0.05,
-          clearCenterSize: 0.5
+          clearCenterSize: 0.5,
         },
         Subtle: {
           strength: 0.08,
@@ -79,7 +79,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
           waveDistortion: 0.04,
           waveSpeed: 1,
           lensBlur: 0.08,
-          clearCenterSize: 0.4
+          clearCenterSize: 0.4,
         },
         "Classic Glass": {
           strength: 0.12,
@@ -94,7 +94,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
           waveDistortion: 0.03,
           waveSpeed: 0.5,
           lensBlur: 0.12,
-          clearCenterSize: 0.2
+          clearCenterSize: 0.2,
         },
         Dramatic: {
           strength: 0.25,
@@ -109,7 +109,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
           waveDistortion: 0.15,
           waveSpeed: 1.8,
           lensBlur: 0.25,
-          clearCenterSize: 0.15
+          clearCenterSize: 0.15,
         },
         "Chromatic Focus": {
           strength: 0.1,
@@ -124,7 +124,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
           waveDistortion: 0.05,
           waveSpeed: 0.8,
           lensBlur: 0.1,
-          clearCenterSize: 0.25
+          clearCenterSize: 0.25,
         },
         "Liquid Wave": {
           strength: 0.18,
@@ -139,7 +139,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
           waveDistortion: 0.2,
           waveSpeed: 2.5,
           lensBlur: 0.15,
-          clearCenterSize: 0.1
+          clearCenterSize: 0.1,
         },
         Gigantic: {
           strength: 0.4,
@@ -154,9 +154,9 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
           waveDistortion: 0.25,
           waveSpeed: 1.5,
           lensBlur: 0.35,
-          clearCenterSize: 0.05
-        }
-      }
+          clearCenterSize: 0.05,
+        },
+      },
     },
 
     scene: null,
@@ -301,7 +301,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
         ".division",
         ".signal",
         ".central-text",
-        ".footer"
+        ".footer",
       ];
 
       gsap.set(containers.concat(".nav-links"), { opacity: 0 });
@@ -369,7 +369,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
         canvas,
         antialias: true,
         alpha: true,
-        premultipliedAlpha: false
+        premultipliedAlpha: false,
       });
       this.renderer.setSize(window.innerWidth, window.innerHeight);
       this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -399,7 +399,7 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
       );
       this.camera.position.z = 1;
 
-      this.loadBackgroundTexture();
+      // this.loadBackgroundTexture();
       this.setupPostProcessing();
       this.setupPane();
       this.setupNavHoverSounds();
@@ -439,18 +439,18 @@ import { Pane } from "https://cdn.skypack.dev/tweakpane@4.0.4";
       }
     },
 
-    loadBackgroundTexture() {
-      new THREE.TextureLoader().load(
-        "https://assets.codepen.io/7558/red-protocol-poster-03-bg.jpg",
-        (tex) => {
-          this.backgroundTexture = tex;
-          this.createBackgroundMesh();
-          this.isTextureLoaded = true;
-        },
-        undefined,
-        () => (this.isTextureLoaded = true)
-      );
-    },
+    // loadBackgroundTexture() {
+    // //   new THREE.TextureLoader().load(
+    // //     "https://assets.codepen.io/7558/red-protocol-poster-03-bg.jpg",
+    // //     (tex) => {
+    // //       this.backgroundTexture = tex;
+    // //       this.createBackgroundMesh();
+    // //       this.isTextureLoaded = true;
+    // //     },
+    // //     undefined,
+    // //     () => (this.isTextureLoaded = true)
+    // //   );
+    // // },
 
     createBackgroundMesh() {
       if (this.backgroundMesh) this.backgroundScene.remove(this.backgroundMesh);
@@ -548,14 +548,14 @@ void main(){
           uEdgeWidth: { value: this.PARAMS.distortion.edgeWidth },
           uEdgeOpacity: { value: this.PARAMS.distortion.edgeOpacity },
           uRimLightIntensity: {
-            value: this.PARAMS.distortion.rimLightIntensity
+            value: this.PARAMS.distortion.rimLightIntensity,
           },
           uRimLightWidth: { value: this.PARAMS.distortion.rimLightWidth },
           uChromaticAberration: {
-            value: this.PARAMS.distortion.chromaticAberration
+            value: this.PARAMS.distortion.chromaticAberration,
           },
           uReflectionIntensity: {
-            value: this.PARAMS.distortion.reflectionIntensity
+            value: this.PARAMS.distortion.reflectionIntensity,
           },
           uWaveDistortion: { value: this.PARAMS.distortion.waveDistortion },
           uWaveSpeed: { value: this.PARAMS.distortion.waveSpeed },
@@ -563,10 +563,10 @@ void main(){
           uClearCenterSize: { value: this.PARAMS.distortion.clearCenterSize },
           uOverallIntensity: { value: this.PARAMS.distortion.overallIntensity },
           uAspect: { value: this.aspect },
-          uTime: { value: 0 }
+          uTime: { value: 0 },
         },
         vertexShader: v,
-        fragmentShader: f
+        fragmentShader: f,
       });
 
       this.customPass.renderToScreen = true;
@@ -607,7 +607,7 @@ void main(){
 
       const p = (this.pane = new Pane({
         title: "Glass Refraction Controls",
-        expanded: true
+        expanded: true,
       }));
 
       p.addBinding(this.PARAMS.distortion, "preset", {
@@ -619,8 +619,8 @@ void main(){
           Dramatic: "Dramatic",
           "Chromatic Focus": "Chromatic Focus",
           "Liquid Wave": "Liquid Wave",
-          Gigantic: "Gigantic"
-        }
+          Gigantic: "Gigantic",
+        },
       }).on("change", (ev) => this.loadPreset(ev.value));
 
       p.addButton({ title: "Reload Preset" }).on("click", () =>
@@ -639,10 +639,10 @@ void main(){
         min: 0,
         max: 2,
         step: 0.01,
-        label: "Overall Intensity"
+        label: "Overall Intensity",
       });
       p.addBinding(this.PARAMS.distortion, "followMouse", {
-        label: "Follow Mouse"
+        label: "Follow Mouse",
       }).on("change", (ev) => {
         if (!ev.value) this.staticMousePosition = { x: 0.5, y: 0.5 };
       });
@@ -650,7 +650,7 @@ void main(){
         min: 0,
         max: 3,
         step: 0.1,
-        label: "Animation Speed"
+        label: "Animation Speed",
       });
 
       const f1 = p.addFolder({ title: "Size Controls" });
@@ -658,7 +658,7 @@ void main(){
         min: 0.2,
         max: 3,
         step: 0.1,
-        label: "Effect Size"
+        label: "Effect Size",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uSize.value = ev.value)
@@ -667,7 +667,7 @@ void main(){
         min: 0.05,
         max: 0.8,
         step: 0.01,
-        label: "Base Radius"
+        label: "Base Radius",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uRadius.value = ev.value)
@@ -678,7 +678,7 @@ void main(){
         min: 0,
         max: 0.5,
         step: 0.01,
-        label: "Refraction Strength"
+        label: "Refraction Strength",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uStrength.value = ev.value)
@@ -687,7 +687,7 @@ void main(){
         min: 0,
         max: 1,
         step: 0.01,
-        label: "Clear Center"
+        label: "Clear Center",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uClearCenterSize.value = ev.value)
@@ -698,7 +698,7 @@ void main(){
         min: 0,
         max: 0.15,
         step: 0.001,
-        label: "Chromatic Aberration"
+        label: "Chromatic Aberration",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uChromaticAberration.value = ev.value)
@@ -707,7 +707,7 @@ void main(){
         min: 0,
         max: 1,
         step: 0.01,
-        label: "Reflections"
+        label: "Reflections",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uReflectionIntensity.value = ev.value)
@@ -716,7 +716,7 @@ void main(){
         min: 0,
         max: 0.5,
         step: 0.01,
-        label: "Lens Blur"
+        label: "Lens Blur",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uLensBlur.value = ev.value)
@@ -727,7 +727,7 @@ void main(){
         min: 0,
         max: 0.3,
         step: 0.01,
-        label: "Wave Strength"
+        label: "Wave Strength",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uWaveDistortion.value = ev.value)
@@ -736,7 +736,7 @@ void main(){
         min: 0,
         max: 5,
         step: 0.1,
-        label: "Wave Speed"
+        label: "Wave Speed",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uWaveSpeed.value = ev.value)
@@ -747,7 +747,7 @@ void main(){
         min: 0,
         max: 0.2,
         step: 0.01,
-        label: "Edge Width"
+        label: "Edge Width",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uEdgeWidth.value = ev.value)
@@ -756,7 +756,7 @@ void main(){
         min: 0,
         max: 1,
         step: 0.01,
-        label: "Edge Opacity"
+        label: "Edge Opacity",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uEdgeOpacity.value = ev.value)
@@ -767,7 +767,7 @@ void main(){
         min: 0,
         max: 1,
         step: 0.01,
-        label: "Rim Light Intensity"
+        label: "Rim Light Intensity",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uRimLightIntensity.value = ev.value)
@@ -776,7 +776,7 @@ void main(){
         min: 0,
         max: 0.3,
         step: 0.01,
-        label: "Rim Light Width"
+        label: "Rim Light Width",
       }).on(
         "change",
         (ev) => (this.customPass.uniforms.uRimLightWidth.value = ev.value)
@@ -786,7 +786,7 @@ void main(){
         position: "fixed",
         top: "10px",
         right: "10px",
-        zIndex: "3000"
+        zIndex: "3000",
       });
       p.hidden = true;
       this.paneVisible = false;
@@ -815,7 +815,11 @@ void main(){
       this.aspect = window.innerWidth / window.innerHeight;
 
       if (this.camera) {
-        this.camera.left = this.camera.right = this.backgroundCamera.left = this.backgroundCamera.right = null;
+        this.camera.left =
+          this.camera.right =
+          this.backgroundCamera.left =
+          this.backgroundCamera.right =
+            null;
         [this.camera, this.backgroundCamera].forEach((cam) => {
           cam.left = -this.aspect;
           cam.right = this.aspect;
@@ -864,7 +868,7 @@ void main(){
         ? this.composer.render()
         : (this.renderer.clear(),
           this.renderer.render(this.backgroundScene, this.backgroundCamera));
-    }
+    },
   };
 
   window.addEventListener("error", (e) => {
