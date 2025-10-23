@@ -405,6 +405,51 @@ body::before {
   right: 10px !important;
 }
 
+.contract-address {
+  position: relative;
+  margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 215, 0, 0.1); /* soft gold glow */
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 12px;
+  padding: 10px 20px;
+  max-width: 420px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
+  text-align: center;
+  color: #ffd700;
+  font-family: "Courier New", monospace;
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+.contract-address span {
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.contract-address p {
+  font-size: 0.85rem;
+  margin: 4px 0 0 0;
+  word-break: break-all;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  }
+}
+
+
 /* === Popup Overlay === */
 .popup-overlay {
   position: fixed;
