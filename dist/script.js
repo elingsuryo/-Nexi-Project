@@ -897,17 +897,20 @@ void main(){
   // === COMING SOON POPUP ===
   const comingSoonOverlay = document.getElementById("comingSoonOverlay");
 
-  // Tombol yang akan memunculkan popup
+  // Ambil semua link di navbar dan footer
   const comingSoonTriggers = document.querySelectorAll(
     "nav a, .footer-box a, .footer-box span"
   );
 
   comingSoonTriggers.forEach((el) => {
     el.addEventListener("click", (e) => {
-      e.preventDefault(); // mencegah redirect
+      // Skip khusus link FEATURES
+      if (el.textContent.trim().toUpperCase().includes("FEATURES")) return;
+
+      e.preventDefault(); // cegah redirect
       comingSoonOverlay.classList.add("active");
 
-      // otomatis hilang setelah 3 detik
+      // popup otomatis hilang setelah 3 detik
       setTimeout(() => {
         comingSoonOverlay.classList.remove("active");
       }, 3000);
