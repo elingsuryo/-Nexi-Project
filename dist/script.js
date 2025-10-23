@@ -871,6 +871,30 @@ void main(){
     },
   };
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const popupOverlay = document.getElementById("popupOverlay");
+    const popupClose = document.getElementById("popupClose");
+    const featureLink = document.querySelector('.nav-links a[href="#"]');
+
+    // Klik link FEATURES → buka popup
+    featureLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      popupOverlay.classList.add("active");
+    });
+
+    // Klik tombol close → tutup popup
+    popupClose.addEventListener("click", () => {
+      popupOverlay.classList.remove("active");
+    });
+
+    // Klik di luar kotak popup → tutup popup
+    popupOverlay.addEventListener("click", (e) => {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove("active");
+      }
+    });
+  });
+
   window.addEventListener("error", (e) => {
     let m = "An error occurred";
     if (e.error?.message) m += ": " + e.error.message;
