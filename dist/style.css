@@ -229,7 +229,7 @@ body::before {
 }
 
 .logo-overlay img {
-  width: 600px; /* ubah sesuai kebutuhan */
+  width: 750px; /* ubah sesuai kebutuhan */
   height: auto;
   opacity: 0.9;
   filter: drop-shadow(0 0 15px rgba(255, 220, 100, 0.6)) brightness(1.1);
@@ -405,80 +405,40 @@ body::before {
   right: 10px !important;
 }
 
-/* Popup overlay */
+/* === Popup Overlay === */
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(10, 10, 10, 0.7);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(10px);
   display: none;
-  align-items: center;
   justify-content: center;
-  z-index: 3000;
+  align-items: center;
+  z-index: 4000;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-/* Saat aktif */
 .popup-overlay.active {
   display: flex;
   opacity: 1;
 }
 
-/* Kotak popup */
-.popup-box {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 150, 0.3);
-  box-shadow: 0 0 40px rgba(255, 220, 100, 0.4);
-  color: #fff9c7;
-  padding: 30px 40px;
+/* === Popup Box === */
+.popup-content {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 215, 100, 0.25);
   border-radius: 20px;
-  max-width: 400px;
+  padding: 40px;
   width: 90%;
-  text-align: center;
-  font-family: var(--font-primary);
-  animation: fadeInUp 0.4s ease;
+  max-width: 900px;
+  color: #f5f5f5;
+  box-shadow: 0 0 40px rgba(255, 235, 150, 0.15);
+  animation: popupFade 0.4s ease;
+  position: relative;
 }
 
-/* Judul popup */
-.popup-box h2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #fffac2;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-/* Isi popup */
-.popup-box p {
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #f7f6e7;
-}
-
-/* Tombol close */
-.popup-close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  background: transparent;
-  border: none;
-  color: #fffac2;
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.popup-close:hover {
-  color: #ffe57c;
-  transform: scale(1.2);
-}
-
-/* Animasi masuk */
-@keyframes fadeInUp {
+@keyframes popupFade {
   from {
     opacity: 0;
     transform: translateY(40px);
@@ -487,6 +447,75 @@ body::before {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* === Close Button === */
+.popup-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #fff8c2;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s;
+}
+.popup-close:hover {
+  color: #ffe873;
+  transform: scale(1.2);
+}
+
+/* === Title === */
+.popup-content h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff9c2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* === Features Grid === */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* === Feature Card === */
+.feature-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 100, 0.15);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 215, 100, 0.2);
+  border-color: rgba(255, 215, 100, 0.35);
+}
+
+/* Icon */
+.feature-card .icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #ffd86f;
+}
+
+/* Title */
+.feature-card h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+/* Text */
+.feature-card p {
+  font-size: 0.85rem;
+  color: #d7d7d7;
+  line-height: 1.4;
 }
 
 .footer-center {

@@ -876,18 +876,17 @@ void main(){
     const popupClose = document.getElementById("popupClose");
     const featureLink = document.querySelector('.nav-links a[href="#"]');
 
-    // Klik link FEATURES → buka popup
+    // Klik FEATURES → buka popup
     featureLink.addEventListener("click", (e) => {
       e.preventDefault();
       popupOverlay.classList.add("active");
     });
 
-    // Klik tombol close → tutup popup
+    // Tutup popup
     popupClose.addEventListener("click", () => {
       popupOverlay.classList.remove("active");
     });
 
-    // Klik di luar kotak popup → tutup popup
     popupOverlay.addEventListener("click", (e) => {
       if (e.target === popupOverlay) {
         popupOverlay.classList.remove("active");
