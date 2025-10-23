@@ -910,6 +910,7 @@ comingSoonTriggers.forEach((el) => {
     // Skip khusus FEATURES, X, dan TELEGRAM
     if (
       text.includes("FEATURES") ||
+      text.includes("BUY") ||
       text === "" || // icon tanpa teks (seperti logo X / Telegram)
       el.href?.includes("x.com") ||
       el.href?.includes("t.me")
