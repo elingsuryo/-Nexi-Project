@@ -894,28 +894,39 @@ void main(){
     });
   });
 
+  
   // === COMING SOON POPUP ===
-  const comingSoonOverlay = document.getElementById("comingSoonOverlay");
+const comingSoonOverlay = document.getElementById("comingSoonOverlay");
 
-  // Ambil semua link di navbar dan footer
-  const comingSoonTriggers = document.querySelectorAll(
-    "nav a, .footer-box a, .footer-box span"
-  );
+// Ambil semua link di navbar dan footer
+const comingSoonTriggers = document.querySelectorAll(
+  'nav a, .footer-box a, .footer-box span'
+);
 
-  comingSoonTriggers.forEach((el) => {
-    el.addEventListener("click", (e) => {
-      // Skip khusus link FEATURES
-      if (el.textContent.trim().toUpperCase().includes("FEATURES")) return;
+comingSoonTriggers.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    const text = el.textContent.trim().toUpperCase();
 
-      e.preventDefault(); // cegah redirect
-      comingSoonOverlay.classList.add("active");
+    // Skip khusus FEATURES, X, dan TELEGRAM
+    if (
+      text.includes("FEATURES") ||
+      text === "" || // icon tanpa teks (seperti logo X / Telegram)
+      el.href?.includes("x.com") ||
+      el.href?.includes("t.me")
+    ) {
+      return;
+    }
 
-      // popup otomatis hilang setelah 3 detik
-      setTimeout(() => {
-        comingSoonOverlay.classList.remove("active");
-      }, 3000);
-    });
+    e.preventDefault(); // cegah redirect
+    comingSoonOverlay.classList.add("active");
+
+    // popup otomatis hilang setelah 3 detik
+    setTimeout(() => {
+      comingSoonOverlay.classList.remove("active");
+    }, 3000);
   });
+});
+
 
   window.addEventListener("error", (e) => {
     let m = "An error occurred";
