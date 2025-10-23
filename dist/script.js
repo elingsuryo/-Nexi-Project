@@ -898,7 +898,6 @@ void main(){
   // === COMING SOON POPUP ===
 const comingSoonOverlay = document.getElementById("comingSoonOverlay");
 
-// Ambil semua link di navbar dan footer
 const comingSoonTriggers = document.querySelectorAll(
   'nav a, .footer-box a, .footer-box span'
 );
@@ -907,21 +906,19 @@ comingSoonTriggers.forEach((el) => {
   el.addEventListener("click", (e) => {
     const text = el.textContent.trim().toUpperCase();
 
-    // Skip khusus FEATURES, X, dan TELEGRAM
+    // Skip khusus FEATURES, X, TELEGRAM, dan BUY
     if (
       text.includes("FEATURES") ||
       text.includes("BUY") ||
-      text === "" || // icon tanpa teks (seperti logo X / Telegram)
       el.href?.includes("x.com") ||
       el.href?.includes("t.me")
     ) {
       return;
     }
 
-    e.preventDefault(); // cegah redirect
+    e.preventDefault();
     comingSoonOverlay.classList.add("active");
 
-    // popup otomatis hilang setelah 3 detik
     setTimeout(() => {
       comingSoonOverlay.classList.remove("active");
     }, 3000);
