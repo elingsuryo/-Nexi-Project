@@ -894,6 +894,26 @@ void main(){
     });
   });
 
+  // === COMING SOON POPUP ===
+  const comingSoonOverlay = document.getElementById("comingSoonOverlay");
+
+  // Tombol yang akan memunculkan popup
+  const comingSoonTriggers = document.querySelectorAll(
+    "nav a, .footer-box a, .footer-box span"
+  );
+
+  comingSoonTriggers.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault(); // mencegah redirect
+      comingSoonOverlay.classList.add("active");
+
+      // otomatis hilang setelah 3 detik
+      setTimeout(() => {
+        comingSoonOverlay.classList.remove("active");
+      }, 3000);
+    });
+  });
+
   window.addEventListener("error", (e) => {
     let m = "An error occurred";
     if (e.error?.message) m += ": " + e.error.message;

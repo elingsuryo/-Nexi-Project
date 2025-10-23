@@ -518,6 +518,88 @@ body::before {
   line-height: 1.4;
 }
 
+/* ===== Coming Soon Popup ===== */
+.coming-soon-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.coming-soon-overlay.active {
+  display: flex;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.coming-soon-content {
+  text-align: center;
+  color: #fdfdfd;
+  border: 1px solid #ffea00;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  background: rgba(20, 20, 20, 0.8);
+  box-shadow: 0 0 20px #ffea00aa;
+  font-family: "Courier New", monospace;
+}
+
+.coming-soon-content h2 {
+  color: #ffea00;
+  font-size: 2rem;
+  margin: 0.8rem 0;
+  text-shadow: 0 0 15px #ffea00;
+  letter-spacing: 3px;
+  animation: glitch 1.5s infinite;
+}
+
+.coming-soon-content p {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  color: #ccc;
+}
+
+/* Loading spinner */
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top: 3px solid #ffea00;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px #ffea00, -2px -2px #00ffff;
+  }
+  50% {
+    text-shadow: -2px -2px #ffea00, 2px 2px #00ffff;
+  }
+  100% {
+    text-shadow: 2px 2px #ffea00, -2px -2px #00ffff;
+  }
+}
+
 .footer-center {
   position: fixed;
   bottom: 40px;
